@@ -4,6 +4,6 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()],
   output: {
-    assetPrefix: 'https://jeydevlab.github.io/website/',
+    assetPrefix: 'https://jeydevlab.info/',
   },
 });
