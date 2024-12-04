@@ -1,11 +1,14 @@
 import Styles from './Header.style';
 
+// @ts-ignore
+const assetPrefix = process.env.ASSET_PREFIX;
+
 export function Header() {
 	return (
 		<Styles.Container>
 			<a href={'/home'}>Home</a>
 			<a href={'/videos'}>Videos</a>
-			<img src={'/images/with_hoodie_and_laptop_left.png'}  alt={'Logo image'}/>
+			<img src={`${assetPrefix}/images/website_logo.png`}  alt={'Logo image'}/>
 			<a href={'/gaming'}>Gaming</a>
 			<a href={'/about'}>About</a>
 
