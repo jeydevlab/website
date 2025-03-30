@@ -1,0 +1,16 @@
+[Unit]
+Description=Start Minecraft Web Admin Panel
+Wants=network-online.target
+After=syslog.target network.target nss-lookup.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'cd /home/{{username}}/MinecraftServer/www && ./MinecrafWebServer'
+User={{username}}
+Group={{username}}
+Restart=always
+RestartSec=60
+WorkingDirectory=/home/{{username}}/MinecraftServer/www
+
+[Install]
+WantedBy=multi-user.target

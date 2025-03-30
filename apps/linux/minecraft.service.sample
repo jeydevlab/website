@@ -1,0 +1,16 @@
+[Unit]
+Description=Start Minecraft Server
+Wants=network-online.target
+After=syslog.target network.target nss-lookup.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'cd /home/{{username}}/MinecraftServer/ && java -jar server.jar --nogui'
+User={{username}}
+Group={{username}}
+Restart=always
+RestartSec=60
+WorkingDirectory=/home/{{username}}/MinecraftServer
+
+[Install]
+WantedBy=multi-user.target
